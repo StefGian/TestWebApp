@@ -58,4 +58,9 @@ public class StudentDAO extends Database {
         else return false;
     }
     
+    public boolean DeleteStudent(int id){
+        
+        return false;
+    }
+    
 }
