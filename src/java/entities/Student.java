@@ -28,6 +28,10 @@ public class Student {
     private float grade;
     private String birthDate;
 
+    public Student(String parameter, String parameter0, float parseFloat, String parameter1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getId() {
         return id;
     }

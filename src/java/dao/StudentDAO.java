@@ -51,4 +51,9 @@ public class StudentDAO extends Database {
         return students;
     }
     
+    public boolean InsertStudent(Student st){
+        
+        return false;
+    }
+    
 }

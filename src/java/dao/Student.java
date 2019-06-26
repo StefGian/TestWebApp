@@ -17,6 +17,20 @@ public class Student {
     private int id;
     private String surname;
 
+    public Student() {
+    }
+
+    
+    
+    public Student(String surname, String name, float grade, String birthDate) {
+        this.surname = surname;
+        this.name = name;
+        this.grade = grade;
+        this.birthDate = birthDate;
+    }
+    
+    
+
     public Student(int id, String surname, String name, float grade, String birthDate) {
         this.id = id;
         this.surname = surname;

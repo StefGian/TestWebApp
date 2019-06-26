@@ -35,4 +35,10 @@ public class StudentService {
                 .append("</html>");
         return str.toString();
     }
+    
+    public boolean InsertStudent(Student st){
+        StudentDAO stuDao = new StudentDAO();
+        if(stuDao.InsertStudent(st)) return true;
+        return false;
+    }
 }
