@@ -57,10 +57,15 @@ public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String qString = request.getQueryString();
         StudentService stuServ = new StudentService();
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println(stuServ.getStudents());
+        if(qString != null){
+            out.println(qString);
+            out.print("Param delete: "+ request.getParameter("delete"));
+        }
         }
     }
 
