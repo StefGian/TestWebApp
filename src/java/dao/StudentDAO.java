@@ -20,6 +20,12 @@ import java.util.logging.Logger;
  */
 public class StudentDAO extends Database {
     
+    String server = "localhost:3306";
+        String database = "bootcampdb";
+        String username = "root";
+        String password = "root";
+    
+    
     public StudentDAO() {
         super();
     }
@@ -27,13 +33,7 @@ public class StudentDAO extends Database {
     public List<Student> getStudents() {
         Student st;
         List<Student> students = new ArrayList<>();
-        
-        String server = "localhost:3306";
-        String database = "bootcampdb";
-        String username = "root";
-        String password = "root";
         String query = "SELECT * FROM `bootcampdb`.`students`";
-        
         setOptions("?zeroDateTimeBehavior=convertToNull&serverTimezone=Europe/Athens&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false");
         ResultSet rs = Database(server, database, username, password, query);
         if(rs == null) { System.out.println("Error to the database");} 
@@ -52,8 +52,10 @@ public class StudentDAO extends Database {
     }
     
     public boolean InsertStudent(Student st){
-        
-        return false;
+        String query = "INSERT INTO `bootcamp`.`students`(SURNAME, NAME, GRADE, BIRTHDATE) VALUES (\"" + st.getSurname()+ "\",\"" + st.getName()+ "\"," + st.getGrade()+ "," + "\"" + st.getBirthDate()+ "\" )";
+        int i = Database(server, database, username, password, query, (byte)1); // me to byte 1 kanw execute update
+        if (i >= 1) return true;
+        else return false;
     }
     
 }
